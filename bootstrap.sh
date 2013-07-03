@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Update the box, and insall all the necessary packages to support Laravel
+DEBIAN_FRONTEND=noninteractive apt-get install -qq -y python-software-properties
+add-apt-repository ppa:ondrej/php5
 apt-get -qq update
 DEBIAN_FRONTEND=noninteractive apt-get install -qq -y libapache2-mod-php5 mysql-server php5-cli php5-mysql php5-mcrypt php5-curl php-pear curl git sqlite php5-sqlite
 
