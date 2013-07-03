@@ -6,7 +6,6 @@ add-apt-repository ppa:ondrej/php5
 apt-get -qq update
 DEBIAN_FRONTEND=noninteractive apt-get install -qq -y libapache2-mod-php5 mysql-server php5-cli php5-mysql php5-mcrypt php5-curl php-pear curl git sqlite php5-sqlite
 
-
 # Install PHPUnit
 pear upgrade-all
 pear config-set auto_discover 1
@@ -58,3 +57,4 @@ echo "GRANT ALL PRIVILEGES ON YOUR_DB_NAME.* TO 'root'@'localhost' IDENTIFIED BY
 # Run artisan migrate to setup the database and schema, then seed it
 php artisan migrate --env=development
 php artisan db:seed --env=development
+phpunit
