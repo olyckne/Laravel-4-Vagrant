@@ -19,11 +19,12 @@ VHOST=$(cat <<EOF
   ServerName localhost
   <Directory "/vagrant/public">
     AllowOverride All
+    Require all granted
   </Directory>
 </VirtualHost>
 EOF
 )
-echo "${VHOST}" > /etc/apache2/sites-enabled/000-default
+echo "${VHOST}" > /etc/apache2/sites-enabled/000-default.conf
 
 # Enable mod_rewrite
 sudo a2enmod rewrite
